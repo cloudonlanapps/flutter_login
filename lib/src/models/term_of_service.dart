@@ -6,13 +6,16 @@ class TermOfService {
   String validationErrorMessage;
   bool initialValue;
   bool _checked = false;
+  Future<void> Function(String url)? urlLauncher;
+
   TermOfService(
       {required this.id,
       required this.mandatory,
       required this.text,
       this.linkUrl,
       this.initialValue = false,
-      this.validationErrorMessage = 'Required'}) {
+      this.validationErrorMessage = 'Required',
+      this.urlLauncher}) {
     _checked = initialValue;
   }
   void setStatus(bool checked) {

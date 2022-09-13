@@ -90,9 +90,10 @@ class LoginScreen extends StatelessWidget {
       ],
       termsOfService: [
         TermOfService(
-            id: 'newsletter',
-            mandatory: false,
-            text: 'Newsletter subscription'),
+          id: 'newsletter',
+          mandatory: false,
+          text: 'Newsletter subscription',
+        ),
         TermOfService(
             id: 'general-term',
             mandatory: true,
