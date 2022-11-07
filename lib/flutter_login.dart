@@ -303,7 +303,8 @@ class FlutterLogin extends StatefulWidget {
       this.initialAuthMode = AuthMode.login,
       this.children,
       this.scrollable = false,
-      this.introWidget})
+      this.introWidget,
+      this.bottomWidget})
       : assert((logo is String?) || (logo is ImageProvider?)),
         logo = logo is String ? AssetImage(logo) : logo,
         super(key: key);
@@ -429,6 +430,7 @@ class FlutterLogin extends StatefulWidget {
   /// An IntroWidget that helps to place the navigation links
   /// in case there is a possibility to navigate without login/signup
   final Widget? introWidget;
+  final Widget? bottomWidget;
 
   static String? defaultEmailValidator(value) {
     if (value!.isEmpty || !Regex.email.hasMatch(value)) {

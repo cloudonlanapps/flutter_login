@@ -270,6 +270,7 @@ class LoginScreen extends StatelessWidget {
       },
       showDebugButtons: false,
       introWidget: const IntroWidget(),
+      bottomWidget: const IntroWidget(),
     );
   }
 }

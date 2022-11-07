@@ -18,6 +18,7 @@ class _LoginCard extends StatefulWidget {
     this.loginAfterSignUp = true,
     this.hideProvidersTitle = false,
     this.introWidget,
+    this.bottomWidget,
   }) : super(key: key);
 
   final AnimationController loadingController;
@@ -35,6 +36,7 @@ class _LoginCard extends StatefulWidget {
   final bool requireAdditionalSignUpFields;
   final bool requireSignUpConfirmation;
   final Widget? introWidget;
+  final Widget? bottomWidget;
 
   @override
   _LoginCardState createState() => _LoginCardState();
@@ -605,6 +607,7 @@ class _LoginCardState extends State<_LoginCard> with TickerProviderStateMixin {
                 const SizedBox(height: 20),
                 _buildPasswordField(textFieldWidth, messages, auth),
                 const SizedBox(height: 10),
+                if (widget.bottomWidget != null) widget.bottomWidget!,
               ],
             ),
           ),

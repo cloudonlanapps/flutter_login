@@ -17,7 +17,6 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:sign_in_button/sign_in_button.dart';
 
-import '../../../flutter_login.dart';
 import '../animated_button.dart';
 import '../animated_icon.dart';
 import '../animated_text.dart';
@@ -51,7 +50,8 @@ class AuthCard extends StatefulWidget {
       this.loginTheme,
       this.navigateBackAfterRecovery = false,
       required this.scrollable,
-      this.introWidget})
+      this.introWidget,
+      this.bottomWidget})
       : super(key: key);
 
   final EdgeInsets padding;
@@ -74,6 +74,7 @@ class AuthCard extends StatefulWidget {
 
   final bool scrollable;
   final Widget? introWidget;
+  final Widget? bottomWidget;
 
   @override
   AuthCardState createState() => AuthCardState();
@@ -344,6 +345,7 @@ class AuthCardState extends State<AuthCard> with TickerProviderStateMixin {
             loginAfterSignUp: widget.loginAfterSignUp,
             hideProvidersTitle: widget.hideProvidersTitle,
             introWidget: widget.introWidget,
+            bottomWidget: widget.bottomWidget,
           ),
         );
       case _recoveryIndex:
